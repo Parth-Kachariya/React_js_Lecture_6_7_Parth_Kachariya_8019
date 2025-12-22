@@ -24,7 +24,6 @@ export default Apps;
 npx create-react-app my-app
 cd my-app
 npm start
-git remote add origin 
-https://github.com/Parth-Kachariya/React_js_Lecture_6_7_Parth_Kachariya_8019.git
+git remote add origin https://github.com/Parth-Kachariya/React_js_Lecture_6_7_Parth_Kachariya_8019.git
 
 */
