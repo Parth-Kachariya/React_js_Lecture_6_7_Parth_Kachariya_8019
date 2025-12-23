@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1 className="text-4xl bg-slate-800 text-white font-extrabold mb-2 p-3 flex justify-center hover:bg-slate-900">Vite + React</h1>
+      <h1 className="text-4xl bg-slate-800 text-white font-extrabold mb-2 p-3 flex justify-center hover:bg-slate-900">Vite + React + tailwind</h1>
       <div className="card bg-gray-600 mb-2 hover:bg-slate-800">
         <button
           className="bg-red-600 p-3 font-bold text-white rounded-full cursor-pointer hover:bg-red-800"
