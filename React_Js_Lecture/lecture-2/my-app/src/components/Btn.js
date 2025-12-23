@@ -4,7 +4,7 @@ import  Button  from 'react-bootstrap'
 const button = () => {
   return (
     <div className="container mt-5 mx-auto text-center border bg-warning p-5">
-        <button variant="primary">Click Me!</button>
+        <button variant="primary" className="p-2 bg-primary text-white fw-bold w-50">Click Me!</button>
 
     </div>
   )

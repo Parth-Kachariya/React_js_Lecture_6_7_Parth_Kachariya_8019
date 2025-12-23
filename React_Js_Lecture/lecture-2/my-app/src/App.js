@@ -1,6 +1,7 @@
 // import './App.css';
 import Button from './components/Btn';
 import { Card , Navbar , Container } from "react-bootstrap";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App px-2 container">
