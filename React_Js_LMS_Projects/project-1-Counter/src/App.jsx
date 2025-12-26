@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-red-00 flex flex-col justify-center items-center  bg-linear-to-r from-cyan-500 to-blue-500">
-      <div className="  p-8 flex flex-col justify-between rounded-2xl shadow-2xl bg-blue-100 shadow-indigo-900 border-2 border-indigo-900 text-center w-120 h-100 hover:scale-105 duration-400">
+      <div className="  p-8 flex flex-col justify-between rounded-2xl shadow-2xl bg-blue-100 shadow-indigo-900 border-2 border-indigo-900 text-center w-140 h-100 hover:scale-105 duration-400">
         <h1 className="text-5xl font-extrabold">PR-1-Counter</h1>
         <div className="flex items-center justify-center space-x-8 mt-6">
           <button
