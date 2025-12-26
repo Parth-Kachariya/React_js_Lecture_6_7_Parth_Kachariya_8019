@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Navbar = () => {
+const Navbar = ({props}) => {
   return (
     <div>
       <>
@@ -85,7 +85,7 @@ const Navbar = () => {
                 href="#"
                 className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
               >
-                Calendar
+                Calendar  ,{props}
               </a>
             </div>
           </div>

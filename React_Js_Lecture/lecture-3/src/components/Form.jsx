@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = () => {
+const Form = ({name}) => {
   return (
     <div>
       <>
@@ -20,7 +20,7 @@ const Form = () => {
         className="mx-auto h-15 rounded-full p-2 w-auto bg-gray-800"
       />
       <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-white bg-gray-800 py-2 rounded-md">
-        Sign in to your account
+        Sign in to your account{name}
       </h2>
     </div>
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">

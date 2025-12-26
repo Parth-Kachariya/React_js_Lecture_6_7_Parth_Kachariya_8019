@@ -6,10 +6,10 @@ import Form from "./components/Form";
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const NAME = "Vite , React , Tailwind";
   return (
     <>
-      <Navbar />
+      <Navbar props={NAME} />
       <h1 className=" mt-3 text-4xl bg-slate-800 text-white font-extrabold mb-2 p-3 flex justify-center hover:bg-slate-900">
         Vite + React + tailwind
       </h1>
@@ -22,13 +22,13 @@ function App() {
         </button>
       </div>
 
-      <Appes />
+      <Appes name={NAME} />
 
       <h1 className="bg-slate-800 text-2xl font-bold text-white container flex justify-center p-3 hover:bg-gray-600">
         {" "}
         Hello World
       </h1>
-      <Form />
+      <Form name={NAME} />
     </>
   );
 }
