@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@layer components{
+  .max-w-8xl{
+    @apply max-w-[1320px];
+  }
+}
