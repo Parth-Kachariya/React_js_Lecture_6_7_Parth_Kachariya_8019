@@ -4,3 +4,10 @@
     @apply max-w-[1320px];
   }
 }
+#scroll ::-webkit-scrollbar{
+  width: 0px;
+  display: none;
+}
+html{
+    scrollbar-width: none;
+}
