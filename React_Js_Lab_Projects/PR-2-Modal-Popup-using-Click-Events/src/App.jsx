@@ -9,9 +9,9 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-      <Navbar/>
+        <Navbar />
         <Routes>
-          <Route path="/Counter" element={<Counter/>}></Route>
+          <Route path="/Counter" element={<Counter />}></Route>
           <Route path="/ModalPopup" element={<ModalPopup />}></Route>
           <Route path="*" element={<Error />}></Route>
         </Routes>
