@@ -1,14 +1,13 @@
-import React from 'react'
-import Obj from './components/Obj'
-import ArrayObj from './components/ArrayObj'
+import Obj from "./components/Obj";
+import ArrayObj from "./components/ArrayObj";
 
 const App = () => {
   return (
     <div className="max-w-7xl p-4 rounded-xl border mx-auto text-center">
-      <Obj/>
-      <ArrayObj/>
+      <Obj />
+      <ArrayObj />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
