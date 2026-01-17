@@ -4,15 +4,15 @@ import { Eye, EyeClosed } from "lucide-react";
 // Password Hide and Show code
 const EventHandl = () => {
   const [show, setShow] = useState(false);
-  const togglePassword = () => setShow(!show);
+  const TogglePassword = () => setShow(!show);
 
   //  Change Color  Code
   const [bgColor, setBgColor] = useState("#abd8");
-  const changeColor = () => {
+  const HandleChangeColor = () => {
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     setBgColor(randomColor);
   };
-  const refresh=()=>{
+  const HandleClickrefresh=()=>{
     window.location.reload()
   }
   return (
@@ -34,7 +34,7 @@ const EventHandl = () => {
           />
 
           <button
-            onClick={togglePassword}
+            onClick={TogglePassword}
             className="border text-black p-3 rounded-md cursor-pointer focus:outline-none focus:border-white focus:ring-1 focus:ring-blue-400"
           >
             {show ? (
@@ -46,7 +46,7 @@ const EventHandl = () => {
         </div>
         {/* Change Color On Click Event */}
         <button
-          onClick={changeColor}
+          onClick={HandleChangeColor}
           className="bg-blue-500 cursor-pointer w-60 mx-auto font-semibold text-lg text-white px-6 py-2 rounded-md hover:scale-105 hover:shadow-xl transition"
         >
           Set Background Color As Per adjustment
@@ -55,7 +55,7 @@ const EventHandl = () => {
         <p className="mt-4 text-center text-xl font-semibold">
           Your Background Color Is: {bgColor}
         </p>
-        <button onClick={refresh} className="bg-blue-500 cursor-pointer w-60 mx-auto font-semibold text-lg text-white px-6 py-2 rounded-md hover:scale-105 hover:shadow-xl transition">
+        <button onClick={HandleClickrefresh} className="bg-blue-500 cursor-pointer w-60 mx-auto font-semibold text-lg text-white px-6 py-2 rounded-md hover:scale-105 hover:shadow-xl transition">
             Refresh Page 
         </button>
       </div>
