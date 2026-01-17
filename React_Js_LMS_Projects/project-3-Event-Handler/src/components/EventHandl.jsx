@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Eye, EyeClosed } from "lucide-react";
 
+// Password Hide and Show code
 const EventHandl = () => {
   const [show, setShow] = useState(false);
   const togglePassword = () => setShow(!show);
 
-  // Color Changer state
-  const [bgColor, setBgColor] = useState("#ffffff");
+  //  Change Color  Code
+  const [bgColor, setBgColor] = useState("#abd8");
   const changeColor = () => {
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     setBgColor(randomColor);
@@ -19,7 +20,7 @@ const EventHandl = () => {
       className="min-h-screen flex flex-col items-center justify-center gap-10"
       style={{ backgroundColor: bgColor }}
     >
-      {/* Show / Hide Password */}
+      {/* Show / Hide Password On Click Event*/}
       <div className=" border border-gray-300 bg-white p-6 rounded-lg shadow-xl w-120 flex flex-col gap-8">
         <h2 className="text-4xl p-4 font-extrabold text-center">
           PR-3-Event Handler
@@ -43,7 +44,7 @@ const EventHandl = () => {
             )}
           </button>
         </div>
-        {/* Color Changer */}
+        {/* Change Color On Click Event */}
         <button
           onClick={changeColor}
           className="bg-blue-500 cursor-pointer w-60 mx-auto font-semibold text-lg text-white px-6 py-2 rounded-md hover:scale-105 hover:shadow-xl transition"
