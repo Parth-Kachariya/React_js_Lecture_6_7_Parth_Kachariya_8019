@@ -1,9 +1,11 @@
-import Button from 'react-bootstrap/Button';
+import Accordions from "./Components/Accordions"
+import Buttons from "./Components/Buttons"
+
 const App = () => {
   return (
-    <div>
-            <Button variant="primary">Primary</Button>
-
+    <div className="container mx-auto">
+      <Buttons />
+      <Accordions />
     </div>
   )
 }
