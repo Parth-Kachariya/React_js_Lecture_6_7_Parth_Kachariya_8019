@@ -7,7 +7,7 @@ const Card = () => {
             <div className="row g-4">
                 {["Ui / Ux Design", "Web Development", "Project Deployment"].map((item, index) => (
                     <div className="col-md-4" key={index}>
-                        <div className="card shadow-lg cardh">
+                        <div className="card shadow-lg card_hover">
                             <div className="card-body">
                                 <h5 className="card-title">{item}</h5>
                                 <p className="card-text">
