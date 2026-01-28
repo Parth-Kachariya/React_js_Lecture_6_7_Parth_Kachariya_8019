@@ -69,14 +69,14 @@ const Comment = () => {
         </button>
       </div>
 
-      <div className="w-full max-w-md bg-white p-5 rounded-xl shadow">
+      <div className="w-full max-w-md  bg-white p-5 rounded-xl shadow">
 
         {/* Review Cards */}
         <h2 className="font-bold p-2 text-center bg-gray-800 text-white rounded-xl text-lg">Customer Reviews</h2>
         {reviews.map((item, index) => (
           <div
             key={index}
-            className="bg-gray-50 p-4 my-3 border border-blue-500/60 rounded-lg shadow"
+            className="bg-gray-50 p-4 my-3 flex flex-col flex-wrap border text-wrap border-blue-500/60 rounded-lg shadow"
           >
             <div className="flex justify-between items-center">
               <h3 className="font-semibold">{item.name}</h3>
@@ -92,7 +92,7 @@ const Comment = () => {
               </span>
             </div>
 
-            <p className="text-gray-700  mt-1">
+            <p className="text-gray-700 break-all mt-1">
               {item.comment}
             </p>
           </div>
