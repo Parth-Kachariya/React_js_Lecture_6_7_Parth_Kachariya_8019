@@ -27,7 +27,6 @@
   box-shadow: none;
   border: 1px solid black;
 }
-/* Table row hover effect */
 .table tbody td {
   transition: all 0.3s ease;
   cursor: pointer;

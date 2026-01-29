@@ -1,4 +1,3 @@
-import Hero from "../Components/Hero";
 import ServiceCard from "../Components/ServiceCard";
 import Carousels from "../Components/Carousels";
 const Home = () => {
