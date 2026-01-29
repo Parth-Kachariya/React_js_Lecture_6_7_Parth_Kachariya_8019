@@ -1,7 +1,48 @@
+.img-height {
+  height: 600px;
+  object-fit: cover;
+}
+.image {
+  height: 200px;
+  object-fit: cover;
+}
+.fs-7 {
+  font-size: 18px;
+}
 .card_hover:hover {
-  transition: transform 0.3s ;
-  transform: scale(1.05);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  transform: rotate(360deg) scale(1.08);
+  transition: all 2s ease;
 }
 .card_hover {
-  transition: transform 0.3s ;
+  transition: all 2s ease;
+}
+.form-control {
+  border: none;
+  border-bottom: 2px solid black;
+  color: black;
+  font-size: 20px;
+}
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid black;
+}
+/* Table row hover effect */
+.table tbody td {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.table tbody tr:hover {
+  background-color: #343a40 !important;
+  border: 2px solid black !important;
+  transform: scale(1.06);
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.table thead {
+  background-color: #343a40;
+  color: white;
 }
