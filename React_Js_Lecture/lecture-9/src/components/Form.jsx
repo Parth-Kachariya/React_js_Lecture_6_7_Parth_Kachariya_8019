@@ -163,7 +163,7 @@ const Form = () => {
         </div>
         <button
           type="submit"
-          className="text-white bg-blue-600  box-border border border-transparent hover:bg-brand-strong focus:ring-1 focus:ring-blue-950 cursor-pointer shadow-xs font-medium leading-5 rounded-base text-sm py-3 px-7 focus:outline-none"
+          className="text-white bg-blue-600 rounded-lg border border-white hover:bg-brand-strong focus:ring-1 focus:ring-blue-950 cursor-pointer shadow-xs font-medium leading-5 rounded-base text-sm py-3 px-7 focus:outline-none"
         >
           Submit
         </button>
