@@ -259,7 +259,7 @@ const Form = () => {
         <button
           type="submit"
           disabled={!isFormValid()}
-          className={`text-white  bg-red-800 w-25 rounded-xl text-lg font-semibold border border-transparent ${!isFormValid() ? 'opacity-50 cursor-not-allowed' : 'hover:bg-brand-strong'} focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none  `}
+          className={`text-white  bg-red-800 w-25 rounded-xl text-lg font-semibold border border-transparent ${!isFormValid() ? 'opacity-50 cursor-not-allowed' : 'hover:bg-brand-strong cursor-pointer'} focus:ring-1 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none   `}
         >
           Submit
         </button>
