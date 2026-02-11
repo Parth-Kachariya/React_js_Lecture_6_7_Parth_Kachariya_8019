@@ -32,6 +32,7 @@ const Captcha = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-6 rounded-xl shadow-lg w-80">
+      <h1 className='text-center font-bold text-xl py-2'>1</h1>
         <h2 className="text-xl font-bold text-center mb-4">
           CAPTCHA Verification
         </h2>
