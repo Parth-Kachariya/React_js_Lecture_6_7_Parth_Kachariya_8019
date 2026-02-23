@@ -35,7 +35,7 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
-                <hr className="my-6 border-default sm:mx-auto lg:my-8" />
+                <hr className="my-6 border-gray-500 sm:mx-auto lg:my-8" />
                 <span className="block text-sm text-body sm:text-center">
                     © 2026{" "}
                     <a href="https://github.com/Parth-Kachariya?tab=repositories" className="hover:text-blue-500 hover:border-b-2 border-blue-500">
