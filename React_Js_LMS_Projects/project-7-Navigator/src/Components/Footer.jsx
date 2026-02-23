@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -13,31 +14,31 @@ const Footer = () => {
                     </a>
                     <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-body sm:mb-0">
                         <li>
-                            <a href="#" className="hover:underline me-4 md:me-6">
+                            <Link to="/about" className=" hover:text-blue-500 hover:border-b-2 border-blue-500  me-4 md:me-6">
                                 About
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:underline me-4 md:me-6">
+                            <Link to="/services" className=" hover:text-blue-500 hover:border-b-2 border-blue-500  me-4 md:me-6">
                                 Services
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:underline me-4 md:me-6">
+                            <Link to="/products" className="hover:text-blue-500 hover:border-b-2 border-blue-500  me-4 md:me-6">
                                Products
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:underline">
+                            <Link to="/contact" className="hover:text-blue-500  hover:border-b-2 border-blue-500 ">
                                 Contact
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
                 <hr className="my-6 border-default sm:mx-auto lg:my-8" />
                 <span className="block text-sm text-body sm:text-center">
                     © 2026{" "}
-                    <a href="https://github.com/Parth-Kachariya?tab=repositories" className="hover:underline">
+                    <a href="https://github.com/Parth-Kachariya?tab=repositories" className="hover:text-blue-500 hover:border-b-2 border-blue-500">
                         Parth Kachariya
                     </a>
                     . All Rights Reserved.
