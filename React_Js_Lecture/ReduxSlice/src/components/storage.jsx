@@ -1,5 +1,9 @@
-import {createStore} from 'redux';
-import {reducers} from './reducers';
-const store = createStore(reducers);
 
-export default store;   
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from './counterSlice'
+import logger from 'redux-logger'
+
+export const store = configureStore({
+  reducer:counterReducer,
+  middleware:(getDefualtMiddleware) => getDefualtMiddleware().concat(logger)
+})
