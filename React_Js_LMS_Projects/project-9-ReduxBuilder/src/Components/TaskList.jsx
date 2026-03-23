@@ -15,7 +15,7 @@ const TaskList = () => {
 
   return (
     <>
-        <div className="space-y-3 bg-gray-800 border border-gray-400 p-4 space-x-4 rounded-xl grid grid-cols-2">
+        <div className="space-y-3 bg-gray-800 border border-gray-400 p-1 space-x-4 rounded-xl ">
           {filteredTasks.map((task) => (
             <TaskItem key={task.id} task={task} />
           ))}

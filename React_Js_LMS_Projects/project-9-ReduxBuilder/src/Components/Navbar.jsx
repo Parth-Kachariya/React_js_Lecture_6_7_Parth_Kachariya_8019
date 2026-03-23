@@ -2,12 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  
-
   return (
     <>
       <div>
-        <nav className="bg-gray-800 mx-auto fixed w-full z-20 top-0 border-b border-gray-500">
+        <nav
+          className="bg-gray-800 mx-auto fixed w-full z-20 top-0 shadow-xl
+         shadow-gray-700 border-b border-gray-500"
+        >
           <div className=" max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
             {/* Logo */}
             <a

@@ -2,7 +2,7 @@ import React from "react";
 
 const ApiCard = ({ api }) => {
   return (
-    <div className="bg-black shadow p-4 rounded h-150   overflow-hidden">
+    <div className="bg-black shadow p-4 rounded h-60   overflow-hidden">
       <h2 className="font-bold text-lg">{api.name}</h2>
 
       <p className="text-gray-400 mt-2">{api.description}</p>
