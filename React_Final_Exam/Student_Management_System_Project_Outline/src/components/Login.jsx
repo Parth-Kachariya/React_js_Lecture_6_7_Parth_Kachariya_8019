@@ -1,22 +1,24 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { login, clearError } from '../store/authSlice';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { FaUser, FaLock, FaSignInAlt } from 'react-icons/fa';
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login, clearError } from "../store/authSlice";
+import { useNavigate, useLocation } from "react-router-dom";
+import { FaUser, FaLock, FaSignInAlt } from "react-icons/fa";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
-    username: '',
-    password: '',
+    email: "",
+    password: "",
   });
   const [errors, setErrors] = useState({});
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const { loading, error, isAuthenticated } = useSelector((state) => state.auth);
+  const { loading, error, isAuthenticated } = useSelector(
+    (state) => state.auth,
+  );
 
-  const from = location.state?.from?.pathname || '/students';
+  const from = location.state?.from?.pathname || "/students";
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -32,11 +34,13 @@ const Login = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!credentials.username) {
-      newErrors.username = 'Username is required';
+    if (!credentials.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(credentials.email)) {
+      newErrors.email = "Email is invalid";
     }
     if (!credentials.password) {
-      newErrors.password = 'Password is required';
+      newErrors.password = "Password is required";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -57,7 +61,7 @@ const Login = () => {
     if (errors[e.target.name]) {
       setErrors({
         ...errors,
-        [e.target.name]: '',
+        [e.target.name]: "",
       });
     }
   };
@@ -72,37 +76,46 @@ const Login = () => {
           <h2 className="text-3xl font-bold text-gray-800">Welcome Back</h2>
           <p className="text-gray-500 mt-2">Sign in to manage students</p>
         </div>
-        
+
         {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-4" role="alert">
+          <div
+            className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-4"
+            role="alert"
+          >
             <span className="block sm:inline">{error}</span>
           </div>
         )}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="username" className="block text-gray-700 text-sm font-bold mb-2">
-              Username
+            <label
+              htmlFor="email"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
+              Email
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <FaUser className="text-gray-400" />
               </div>
               <input
-                type="text"
-                className={`shadow appearance-none border rounded-lg w-full py-3 pl-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.username ? 'border-red-500' : ''}`}
-                id="username"
-                name="username"
-                value={credentials.username}
+                type="email"
+                className={`shadow appearance-none border rounded-lg w-full py-3 pl-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.email ? "border-red-500" : ""}`}
+                id="email"
+                name="email"
+                value={credentials.email}
                 onChange={handleChange}
-                placeholder="Enter username"
+                placeholder="Enter email"
               />
             </div>
-            {errors.username && (
-              <p className="text-red-500 text-xs italic mt-1">{errors.username}</p>
+            {errors.email && (
+              <p className="text-red-500 text-xs italic mt-1">{errors.email}</p>
             )}
           </div>
           <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">
+            <label
+              htmlFor="password"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
               Password
             </label>
             <div className="relative">
@@ -111,7 +124,7 @@ const Login = () => {
               </div>
               <input
                 type="password"
-                className={`shadow appearance-none border rounded-lg w-full py-3 pl-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.password ? 'border-red-500' : ''}`}
+                className={`shadow appearance-none border rounded-lg w-full py-3 pl-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.password ? "border-red-500" : ""}`}
                 id="password"
                 name="password"
                 value={credentials.password}
@@ -120,7 +133,9 @@ const Login = () => {
               />
             </div>
             {errors.password && (
-              <p className="text-red-500 text-xs italic mt-1">{errors.password}</p>
+              <p className="text-red-500 text-xs italic mt-1">
+                {errors.password}
+              </p>
             )}
           </div>
           <div className="flex items-center justify-center">
@@ -142,8 +157,19 @@ const Login = () => {
               )}
             </button>
           </div>
+            <div className="flex items-center justify-center mt-4">
+              <p className="text-gray-600 text-sm">
+                Don't have an account?{" "}
+                <button
+                  type="button"
+                  onClick={() => navigate("/register")}
+                  className="text-blue-600 hover:text-blue-800 font-semibold"
+                >
+                  Register
+                </button>
+              </p>
+            </div>
         </form>
-       
       </div>
     </div>
   );

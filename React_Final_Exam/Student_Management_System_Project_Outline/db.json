@@ -6,7 +6,7 @@
       "class": "12th Grade",
       "email": "rakesh23@gmail.com",
       "phone": "123-456-7895",
-      "address": "surat Gujrat",
+      "address": "katargam ,surat , Gujrat",
       "id": "zIyWnEqVeME"
     }
   ],
@@ -17,6 +17,12 @@
       "password": "admin123",
       "email": "admin@example.com",
       "role": "admin"
+    },
+    {
+      "username": "parth kachariya",
+      "email": "parthkachariya668@gmail.com",
+      "password": "Phk@97252",
+      "id": "gfpxyX3c96o"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
