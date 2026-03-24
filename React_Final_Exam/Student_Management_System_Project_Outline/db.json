@@ -1,0 +1,23 @@
+{
+  "students": [
+    {
+      "name": "rakesh sharma ",
+      "rollNumber": "12",
+      "class": "12th Grade",
+      "email": "rakesh23@gmail.com",
+      "phone": "123-456-7895",
+      "address": "surat Gujrat",
+      "id": "zIyWnEqVeME"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123",
+      "email": "admin@example.com",
+      "role": "admin"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
