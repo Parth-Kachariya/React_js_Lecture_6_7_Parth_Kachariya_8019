@@ -1,7 +1,12 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
+
+const loadTasks = () => {
+  const data = localStorage.getItem("tasks");
+  return data ? JSON.parse(data) : [];
+};
 const initialState = {
-  tasks: [],
+  tasks: loadTasks( ),
   filter: "all",
   search: "",
 };

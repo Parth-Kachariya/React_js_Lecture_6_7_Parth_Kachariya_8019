@@ -6,4 +6,9 @@ const store = configureStore({
         tasks: taskReducer,
     },
 });
+
+store.subscribe(() => {
+  const state = store.getState();
+  localStorage.setItem("tasks", JSON.stringify(state.tasks.tasks));
+});
 export default store;

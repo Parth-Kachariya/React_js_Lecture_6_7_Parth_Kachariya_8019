@@ -21,9 +21,13 @@ const TaskItem = ({ task }) => {
         <div className="flex gap-2">
           <button
             onClick={() => dispatch(toggleTask(task.id))}
-            className="bg-green-500 cursor-pointer hover:bg-green-600 text-white px-3 py-1 rounded"
+            className={`cursor-pointer text-white px-3 py-1 rounded ${
+              task.completed
+                ? "bg-yellow-500 hover:bg-yellow-600"
+                : "bg-green-500 hover:bg-green-600"
+            }`}
           >
-            Done
+            {task.completed ? "Reopen" : "Complete"}
           </button>
           <button
             onClick={() => dispatch(deleteTask(task.id))}
