@@ -8,6 +8,33 @@
       "phone": "123-456-7895",
       "address": "katargam ,surat , Gujrat",
       "id": "zIyWnEqVeME"
+    },
+    {
+      "name": "mahesh Jadav",
+      "rollNumber": "89",
+      "class": "11th Grade",
+      "email": "mahesh555@gmail.com",
+      "phone": "9825670436",
+      "address": "varachha , Surat ,Gujrat",
+      "id": "X1iRn4wlrI4"
+    },
+    {
+      "name": "Suresh Ahir ",
+      "rollNumber": "40",
+      "class": "9th Grade",
+      "email": "suresh12@gmail.com",
+      "phone": "1234567895",
+      "address": "Borda ,Bhavnagar  ,Gujrat",
+      "id": "t_v0ESRbOsA"
+    },
+    {
+      "name": "Rutvik Jadeja",
+      "rollNumber": "30",
+      "class": "10th Grade",
+      "email": "rutvik612@gmail.com",
+      "phone": "9093056821",
+      "address": "varachha ,Surat ,Gujrat",
+      "id": "2R5NhZfuS8A"
     }
   ],
   "users": [

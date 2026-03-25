@@ -9,7 +9,7 @@ const Layout = () => {
 
       <Navbar />
 
-      <main className=" max-w-7xl mx-auto pt-20">
+      <main className="  pt-20">
         <Outlet />
       </main>
 

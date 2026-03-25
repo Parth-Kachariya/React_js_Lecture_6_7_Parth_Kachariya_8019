@@ -1,77 +1,72 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
-import SearchBar from "../components/SearchBar";
-import ApiList from "../components/ApiList";
+import axios from "axios";
+import MovieList from "../components/MovieList";
+
+// ✅ Demo API Key (working for testing)
+const API_KEY = "thewdb";
 
 const Home = () => {
+  const [movies, setMovies] = useState([]);
+  const [search, setSearch] = useState("batman");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const [apis, setApis] = useState([]);
-  const [search, setSearch] = useState("");
-  const [filteredApis, setFilteredApis] = useState([]);
+  const fetchMovies = async () => {
+    try {
+      setLoading(true);
+      setError("");
 
-  const API_URL = "https://api.apis.guru/v2/list.json";
+      const res = await axios.get(
+        `https://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`
+      );
+
+      if (res.data.Response === "True") {
+        setMovies(res.data.Search);
+      } else {
+        setMovies([]);
+        setError("No movies found ");
+      }
+    } catch (err) {
+      console.log(err);
+      setError("Something went wrong ");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-
-    const fetchApis = async () => {
-
-      try {
-
-        const res = await fetch(API_URL);
-        const data = await res.json();
-
-        const apiArray = Object.keys(data).map((key) => ({
-          name: data[key].versions[data[key].preferred].info.title,
-          description:
-            data[key].versions[data[key].preferred].info.description,
-          link: key,
-          category: "Public API"
-        }));
-
-        setApis(apiArray);
-        setFilteredApis(apiArray);
-
-      } catch (error) {
-        console.log(error);
-      }
-
-    };
-
-    fetchApis();
-
+    fetchMovies();
   }, []);
 
-  useEffect(() => {
-
-    const filtered = apis.filter(api =>
-      api.name.toLowerCase().includes(search.toLowerCase())
-    );
-
-    setFilteredApis(filtered);
-
-  }, [search, apis]);
-
   return (
-
-    <div className="bg-gray-100 min-h-screen">
-
-      <Header />
-
-      <div className="max-w-6xl mx-auto p-6">
-
-        <SearchBar
-          search={search}
-          setSearch={setSearch}
+    <div className="p-4">
+      {/*  Search */}
+      <div className=" max-w-1/2 mx-auto py-10 flex-wrap flex gap-3 mb-4">
+        <input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search movies..."
+          className="flex-1 p-2 border rounded"
         />
 
-        <ApiList apis={filteredApis} />
-
+        <button
+          onClick={fetchMovies}
+          className="bg-blue-500 text-white px-4 rounded"
+        >
+          Search
+        </button>
       </div>
 
+      {/*  Loading */}
+      {loading && <p className="text-center">Loading...</p>}
+
+      {/*  Error */}
+      {error && <p className="text-center text-red-500">{error}</p>}
+
+      {/*  Movie List */}
+      {!loading && !error && <MovieList movies={movies} />}
     </div>
-
   );
-
 };
 
 export default Home;
