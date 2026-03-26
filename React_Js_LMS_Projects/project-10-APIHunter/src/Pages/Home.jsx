@@ -1,23 +1,68 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import MovieList from "../components/MovieList";
+import MovieList from "../Components/MovieList";
 
-// ✅ Demo API Key (working for testing)
 const API_KEY = "thewdb";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState("batman");
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const fetchMovies = async () => {
+  const fetchAllMovies = async () => {
+    try {
+      setLoading(true);
+
+      let allMovies = [];
+      const keywords = [
+        "avengers",
+        "batman",
+        "spiderman",
+        "love",
+        "war",
+        "king",
+        "robot",
+        "action",
+        "comedy",
+        "horror",
+      ];
+
+      for (let key of keywords) {
+        const res = await axios.get(
+          `https://www.omdbapi.com/?s=${key}&apikey=${API_KEY}`,
+        );
+
+        if (res.data.Search) {
+          allMovies = [...allMovies, ...res.data.Search];
+        }
+      }
+
+      const uniqueMovies = Array.from(
+        new Map(allMovies.map((m) => [m.imdbID, m])).values(),
+      );
+
+      setMovies(uniqueMovies);
+    } catch (err) {
+      console.log(err);
+      setError("Something went wrong ");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchSearchMovies = async () => {
+    if (!search.trim()) {
+      fetchAllMovies();
+      return;
+    }
+
     try {
       setLoading(true);
       setError("");
 
       const res = await axios.get(
-        `https://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`
+        `https://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`,
       );
 
       if (res.data.Response === "True") {
@@ -35,36 +80,39 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetchMovies();
+    fetchAllMovies();
   }, []);
 
+  const handleKey = (e) => {
+    if (e.key === "Enter") {
+      fetchSearchMovies();
+    }
+  };
+
   return (
-    <div className="p-4">
-      {/*  Search */}
-      <div className=" max-w-1/2 mx-auto py-10 flex-wrap flex gap-3 mb-4">
+    <div className="p-4 bg-black min-h-screen text-white">
+      <div className="max-w-xl mx-auto py-10 flex gap-3">
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKey}
           placeholder="Search movies..."
-          className="flex-1 p-2 border rounded"
+          className="flex-1 p-2 rounded border border-white text-white bg-transparent"
         />
 
         <button
-          onClick={fetchMovies}
-          className="bg-blue-500 text-white px-4 rounded"
+          onClick={fetchSearchMovies}
+          className="bg-red-500 cursor-pointer px-4 rounded"
         >
           Search
         </button>
       </div>
 
-      {/*  Loading */}
       {loading && <p className="text-center">Loading...</p>}
 
-      {/*  Error */}
-      {error && <p className="text-center text-red-500">{error}</p>}
+      {error && <p className="text-center text-gray-400">{error}</p>}
 
-      {/*  Movie List */}
-      {!loading && !error && <MovieList movies={movies} />}
+      {!loading && !error && movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );
 };

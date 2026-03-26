@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
             href="https://github.com/Parth-Kachariya?tab=repositories"
-            className="flex items-center px-4 py-3 text-xl border rounded-full font-extrabold mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+            className="flex items-center p-2 text-xl border rounded-full font-extrabold mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
             PK
           </a>
