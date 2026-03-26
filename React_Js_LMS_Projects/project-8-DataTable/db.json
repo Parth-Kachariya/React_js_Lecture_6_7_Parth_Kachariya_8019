@@ -1,0 +1,61 @@
+{
+  "employees": [
+    {
+      "name": "ajay sharma",
+      "designation": "hacker",
+      "department": "IT",
+      "email": "ajay@gmail.com",
+      "id": "z_wEqKYVuU0"
+    },
+    {
+      "name": "rakesh vyas",
+      "designation": "HR",
+      "department": "it",
+      "email": "rakesh@gmail.com",
+      "id": "NeWcsu8Fl9Q"
+    },
+    {
+      "name": "ramesh",
+      "designation": "hacker",
+      "department": "employee",
+      "email": "ramesh@gmail.com",
+      "id": "lK4y4MfdKGU"
+    },
+    {
+      "name": "suresh ahir",
+      "designation": "designer",
+      "department": "employee",
+      "email": "suresh12@gmail.com",
+      "id": "tGZIWP1n6jE"
+    },
+    {
+      "name": "rahul sinh",
+      "designation": "designer",
+      "department": "IT",
+      "email": "rahul@gmail.com",
+      "id": "xYShKt_ywUY"
+    },
+    {
+      "name": "karan sharma ",
+      "designation": "developer",
+      "department": "IT",
+      "email": "karansharma@gmamil.com",
+      "id": "dy9mHnlSqX8"
+    },
+    {
+      "name": "rajeshpal",
+      "designation": "hacker",
+      "department": "HR",
+      "email": "rajesh@gmail.com",
+      "id": "nu1M8DQx3gI"
+    },
+    {
+      "name": "kiran patel",
+      "designation": "designer",
+      "department": "employee",
+      "email": "kiran@gmail.com",
+      "id": "plxtr5Ew784"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
