@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+
+const fallback =
+  "https://static0.srcdn.com/wordpress/wp-content/uploads/2022/01/Spider-Man-No-Way-Home-Avengers-Endgame-Box-Office-SR.jpg";
 
 const MovieCard = ({ movie }) => {
-  const fallback =
-    "https://static0.srcdn.com/wordpress/wp-content/uploads/2022/01/Spider-Man-No-Way-Home-Avengers-Endgame-Box-Office-SR.jpg";
-  const [added, setAdded] = useState(false);
   const [imgSrc, setImgSrc] = useState(fallback);
+  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     if (movie.Poster && movie.Poster !== "N/A") {
@@ -12,47 +13,57 @@ const MovieCard = ({ movie }) => {
     } else {
       setImgSrc(fallback);
     }
-  }, [movie.Poster]);
 
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("wishlist")) || [];
-    const exists = data.find((m) => m.imdbID === movie.imdbID);
-    if (exists) setAdded(true);
-  }, [movie.imdbID]);
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    if (wishlist.find((m) => m.imdbID === movie.imdbID)) {
+      setAdded(true);
+    }
+  }, [movie]);
 
-  const addToWishlist = () => {
-    const data = JSON.parse(localStorage.getItem("wishlist")) || [];
+  const toggleWishlist = () => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-    if (!data.find((m) => m.imdbID === movie.imdbID)) {
-      const updated = [...data, movie];
+    if (!added) {
+      const updated = [...wishlist, movie];
       localStorage.setItem("wishlist", JSON.stringify(updated));
       setAdded(true);
-
-      window.dispatchEvent(new Event("wishlistUpdated"));
+    } else {
+      const updated = wishlist.filter((m) => m.imdbID !== movie.imdbID);
+      localStorage.setItem("wishlist", JSON.stringify(updated));
+      setAdded(false);
     }
+    window.dispatchEvent(new Event("wishlistUpdated"));
   };
 
   return (
-    <div className="min-w-[150px] relative border rounded-xl p-2">
+    <div className="border p-2 border-gray-400  relative group cursor-pointer overflow-hidden rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
       <img
-      src={imgSrc}
-        // src={movie.Poster && movie.Poster !== "N/A" ? movie.Poster : fallback}
+        src={imgSrc}
+        alt={movie.Title}
         onError={() => setImgSrc(fallback)}
-        className="h-56 w-full object-cover rounded"
+        className="h-64  w-full object-cover rounded-lg"
       />
 
-      <h3 className="text-white p-3 bg-gray-800 rounded-lg font-semibold text-sm mt-2">
-        {movie.Title}
-      </h3>
+      <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-between p-3">
+        <div>
+          <h3 className="text-white font-bold text-sm">{movie.Title}</h3>
+          {movie.Year && (
+            <p className="text-gray-300 text-xs font-semibold mt-1">Year: {movie.Year}</p>
+          )}
+          {movie.Type && (
+            <p className="text-gray-300 text-xs font-semibold mt-1">Type: {movie.Type}</p>
+          )}
+        </div>
 
-      <button
-        onClick={addToWishlist}
-        className={`absolute top-3 right-3 px-2 py-1 text-xs rounded ${
-          added ? "bg-green-500" : "bg-red-500"
-        } text-white`}
-      >
-        {added ? "Added " : "Wishlist "}
-      </button>
+        <button
+          onClick={toggleWishlist}
+          className={`mt-2 text-xs px-2 py-1 rounded ${
+            added ? "bg-green-500" : "bg-red-500"
+          } text-white`}
+        >
+          {added ? "Added" : "Wishlist"}
+        </button>
+      </div>
     </div>
   );
 };
