@@ -64,7 +64,6 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -76,7 +75,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`md:hidden bg-white/10 backdrop-blur-lg transition-all duration-300 ${
           isMenuOpen ? "max-h-96 py-4" : "max-h-0 overflow-hidden"

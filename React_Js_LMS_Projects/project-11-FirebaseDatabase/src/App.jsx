@@ -9,7 +9,7 @@ import Recipes from "./pages/Recipes";
 
 const AppContent = () => {
   const { user } = useAuth();
-  const [category, setCategory] = useState("All"); // Sidebar filter
+  const [category, setCategory] = useState("All"); 
 
   if (!user) return <Login />;
 

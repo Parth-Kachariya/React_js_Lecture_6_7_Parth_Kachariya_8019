@@ -19,7 +19,6 @@ const Recipes = ({ category }) => {
   const [type, setType] = useState("Dessert");
   const [loading, setLoading] = useState(true);
 
-  // 🔥 REAL-TIME FAST FETCH
   useEffect(() => {
     if (!user) return;
 
@@ -107,7 +106,7 @@ const Recipes = ({ category }) => {
 
   return (
     <div className="p-6 ">
-      {/* FORM */}
+      {/* Form */}
       <div className="w-2/3 mx-auto">
         <form
           onSubmit={addItem}
@@ -142,14 +141,14 @@ const Recipes = ({ category }) => {
 
           <button
             type="submit"
-            className=" font-bold text-lg cursor-pointer bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-xl flex items-center justify-center gap-2"
+            className=" active:bg-blue-700 active:scale-102 font-bold text-lg cursor-pointer bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-xl flex items-center justify-center gap-2"
           >
             <FiPlus  /> Add
           </button>
         </form>
       </div>
 
-      {/* LIST */}
+      {/* List */}
       {loading ? (
         <p>Loading...</p>
       ) : limitedRecipes.length === 0 ? (

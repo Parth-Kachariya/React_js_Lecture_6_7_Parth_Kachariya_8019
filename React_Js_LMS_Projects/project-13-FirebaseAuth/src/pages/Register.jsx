@@ -28,14 +28,12 @@ const Register = () => {
 
   return (
     <div className="  bg-[url('https://static.vecteezy.com/system/resources/thumbnails/011/635/825/small/abstract-square-interface-modern-background-concept-fingerprint-digital-scanning-visual-security-system-authentication-login-vector.jpg')] bg-no-repeat bg-cover  bg-opacity-20    min-h-screen flex items-center justify-center bg-slate-900 relative overflow-hidden py-12">
-      {/* Background decorative blobs */}
       
       <div className=" absolute top-0 right-0 w-96 h-96 bg-pink-600/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
       <div className="absolute -bottom-8 left-20 w-96 h-96 bg-purple-600/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
 
       <div className="relative z-10 w-full max-w-md px-4">
         <div className="bg-slate-800/70 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 p-8">
-          {/* Header */}
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold text-white mb-2">
               Create Account
@@ -44,7 +42,6 @@ const Register = () => {
           </div>
 
           <form onSubmit={handleRegister} className="space-y-6">
-            {/* Error message */}
             {error && (
               <div className="bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-lg text-sm">
                 {error}
@@ -93,7 +90,6 @@ const Register = () => {
               />
             </div>
 
-            {/* Register Button */}
             <button
               type="submit"
               disabled={isLoading}
@@ -128,7 +124,6 @@ const Register = () => {
             </button>
           </form>
 
-          {/* Login Link */}
           <p className="mt-8 text-center text-white/70">
             Already have an account?{" "}
             <Link

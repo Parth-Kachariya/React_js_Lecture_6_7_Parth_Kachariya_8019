@@ -66,14 +66,12 @@ const Login = () => {
       </div>
 
       <form onSubmit={handleLogin} className="space-y-6">
-        {/* Error message */}
         {error && (
           <div className="bg-red-600/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-xl text-sm">
             {error}
           </div>
         )}
 
-        {/* Email Input */}
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <FiMail className="text-white/50" />
@@ -88,7 +86,6 @@ const Login = () => {
           />
         </div>
 
-        {/* Password Input */}
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <FiLock className="text-white/50" />
@@ -103,7 +100,6 @@ const Login = () => {
           />
         </div>
 
-        {/* Login Button */}
         <button
           type="submit"
           disabled={isLoading}
@@ -139,7 +135,6 @@ const Login = () => {
           )}
         </button>
 
-        {/* Divider */}
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
           </div>
@@ -150,7 +145,6 @@ const Login = () => {
           </div>
         </div>
 
-        {/* Google Login */}
         <button
           type="button"
           onClick={handleGoogleLogin}
@@ -179,7 +173,6 @@ const Login = () => {
         </button>
       </form>
 
-      {/* Register Link */}
       <p className="mt-8 text-center text-white/70">
         Don't have an account?{" "}
         <Link

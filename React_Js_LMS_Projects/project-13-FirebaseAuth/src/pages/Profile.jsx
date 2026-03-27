@@ -16,7 +16,6 @@ const Profile = () => {
   if (!user) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-900 relative overflow-hidden">
-        {/* Decorative background blobs */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-600/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-pink-600/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
 
@@ -45,7 +44,6 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-900 relative overflow-hidden py-12">
-  {/* Decorative background blobs */}
   <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-600/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
   <div className="absolute top-0 right-0 w-96 h-96 bg-pink-600/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
   <div className="absolute -bottom-8 left-20 w-96 h-96 bg-indigo-600/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
@@ -53,7 +51,6 @@ const Profile = () => {
   <div className="relative z-10 w-full max-w-2xl px-4">
     <div className="bg-slate-800/70 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
       
-      {/* Profile Header */}
       <div className="bg-slate-700 p-8 relative">
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
         <div className="flex flex-col items-center relative">
@@ -80,11 +77,8 @@ const Profile = () => {
         </div>
       </div>
 
-      {/* Profile Details */}
       <div className="p-8">
         <div className="grid gap-6">
-
-          {/* Email */}
           <div className="bg-white/5 rounded-xl p-4 border border-white/10 hover:border-white/30 transition-all duration-300">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center">
@@ -106,7 +100,6 @@ const Profile = () => {
             </div>
           </div>
 
-          {/* User ID */}
           <div className="bg-white/5 rounded-xl p-4 border border-white/10 hover:border-white/30 transition-all duration-300">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center">
@@ -123,7 +116,6 @@ const Profile = () => {
 
         </div>
 
-        {/* Action Buttons */}
         <div className="mt-8 flex gap-4">
           <button className="flex-1 bg-cyan-600 text-white py-3 px-6 rounded-xl font-semibold hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-300 flex items-center justify-center gap-2">
             <FiEdit2 />
