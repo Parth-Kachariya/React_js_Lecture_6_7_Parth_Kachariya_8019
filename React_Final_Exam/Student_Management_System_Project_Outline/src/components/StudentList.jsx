@@ -89,7 +89,7 @@ const StudentList = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-8 px-4">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-indigo-50 py-8 px-4">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div>
@@ -103,7 +103,7 @@ const StudentList = () => {
 
           <button
             onClick={handleAddStudent}
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg cursor-pointer transform transition hover:scale-105 flex items-center gap-2 mt-4 md:mt-0"
+            className="bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg cursor-pointer transform transition hover:scale-105 flex items-center gap-2 mt-4 md:mt-0"
           >
             <FaPlus />
             Add New Student

@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { FaUser, FaLock, FaSignInAlt } from "react-icons/fa";
 
 const Login = () => {
-  const [credentials, setCredentials] = useState({
+  const [loginUser, setLoginUser] = useState({
     email: "",
     password: "",
   });
@@ -34,12 +34,12 @@ const Login = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!credentials.email) {
+    if (!loginUser.email) {
       newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(credentials.email)) {
+    } else if (!/\S+@\S+\.\S+/.test(loginUser.email)) {
       newErrors.email = "Email is invalid";
     }
-    if (!credentials.password) {
+    if (!loginUser.password) {
       newErrors.password = "Password is required";
     }
     setErrors(newErrors);
@@ -49,13 +49,13 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      dispatch(login(credentials));
+      dispatch(login(loginUser));
     }
   };
 
   const handleChange = (e) => {
-    setCredentials({
-      ...credentials,
+    setLoginUser({
+      ...loginUser,
       [e.target.name]: e.target.value,
     });
     if (errors[e.target.name]) {
@@ -67,10 +67,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100 py-12 px-4">
       <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8">
         <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-20 h-20 bg-linear-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
             <FaUser className="text-white text-3xl" />
           </div>
           <h2 className="text-3xl font-bold text-gray-800">Welcome Back</h2>
@@ -102,7 +102,7 @@ const Login = () => {
                 className={`shadow appearance-none border rounded-lg w-full py-3 pl-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.email ? "border-red-500" : ""}`}
                 id="email"
                 name="email"
-                value={credentials.email}
+                value={loginUser.email}
                 onChange={handleChange}
                 placeholder="Enter email"
               />
@@ -127,7 +127,7 @@ const Login = () => {
                 className={`shadow appearance-none border rounded-lg w-full py-3 pl-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.password ? "border-red-500" : ""}`}
                 id="password"
                 name="password"
-                value={credentials.password}
+                value={loginUser.password}
                 onChange={handleChange}
                 placeholder="Enter password"
               />
@@ -141,7 +141,7 @@ const Login = () => {
           <div className="flex items-center justify-center">
             <button
               type="submit"
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline w-full transition flex items-center justify-center gap-2"
+              className="bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline w-full transition flex items-center justify-center gap-2"
               disabled={loading}
             >
               {loading ? (

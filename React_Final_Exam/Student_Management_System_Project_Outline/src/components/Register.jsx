@@ -95,10 +95,10 @@ const Register = () => {
     }
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-300 to-red-200 py-12 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-300 to-red-200 py-12 px-4">
       <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8">
         <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-20 h-20 bg-linear-to-r from-blue-600 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
             <FaUser className="text-white text-3xl" />
           </div>
           <h2 className="text-3xl font-bold text-gray-800">Create Account</h2>
@@ -182,7 +182,7 @@ const Register = () => {
 
           <button
             type="submit"
-            className="bg-gradient-to-r cursor-pointer from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline w-full transition"
+            className="bg-linear-to-r cursor-pointer from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline w-full transition"
           >
             Register
           </button>

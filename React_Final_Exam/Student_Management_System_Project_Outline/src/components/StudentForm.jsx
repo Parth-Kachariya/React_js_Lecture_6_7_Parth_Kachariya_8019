@@ -77,10 +77,10 @@ const StudentForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-8 px-4">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-indigo-50 py-8 px-4">
       <div className="container mx-auto max-w-2xl">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4">
+          <div className="bg-linear-to-r from-blue-600 to-indigo-600 text-white px-6 py-4">
             <div className="flex items-center gap-3">
               <FaUserPlus className="text-2xl" />
               <h4 className="text-xl font-semibold m-0">Add New Student</h4>
@@ -208,7 +208,7 @@ const StudentForm = () => {
               <div className="flex gap-2">
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition flex items-center gap-2"
+                  className="bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition flex items-center gap-2"
                   disabled={loading}
                 >
                   {loading ? (

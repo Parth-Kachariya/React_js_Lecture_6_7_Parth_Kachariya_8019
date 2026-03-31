@@ -52,7 +52,7 @@ const StudentDetails = ({ student }) => {
 
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4">
+      <div className="bg-linear-to-r from-blue-600 to-indigo-600 px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
