@@ -13,32 +13,31 @@ const Register = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  // Validation function
   const validate = () => {
     const newErrors = {};
 
-    // Username validation
+    // Username
     if (!formData.username.trim()) {
       newErrors.username = "Username is required";
     } else if (formData.username.length < 3) {
       newErrors.username = "Username must be at least 3 characters";
     }
 
-    // Email validation
+    // Email 
     if (!formData.email) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Email is invalid";
     }
 
-    // Password validation
+    // Password 
     if (!formData.password) {
       newErrors.password = "Password is required";
     } else if (formData.password.length < 6) {
       newErrors.password = "Password must be at least 6 characters";
     }
 
-    // Confirm password
+    // Confirm 
     if (!formData.confirmPassword) {
       newErrors.confirmPassword = "Please confirm your password";
     } else if (formData.password !== formData.confirmPassword) {
@@ -107,7 +106,6 @@ const Register = () => {
         </div>
 
         <form onSubmit={handleSubmit}>
-          {/* Username */}
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Username
@@ -127,7 +125,6 @@ const Register = () => {
             )}
           </div>
 
-          {/* Email */}
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Email
@@ -145,7 +142,6 @@ const Register = () => {
             )}
           </div>
 
-          {/* Password */}
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Password
@@ -165,7 +161,6 @@ const Register = () => {
             )}
           </div>
 
-          {/* Confirm Password */}
           <div className="mb-6">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Confirm Password

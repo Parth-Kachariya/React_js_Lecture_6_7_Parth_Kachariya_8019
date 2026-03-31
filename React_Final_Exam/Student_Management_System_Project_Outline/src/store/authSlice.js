@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const API_URL = "http://localhost:3000/users"; // your JSON server URL
+const API_URL = "http://localhost:3000/users"; 
 
 // LOGIN
 export const login = createAsyncThunk(

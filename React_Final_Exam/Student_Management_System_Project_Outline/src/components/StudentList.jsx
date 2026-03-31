@@ -30,13 +30,11 @@ const StudentList = () => {
     dispatch(fetchStudents());
   }, [dispatch]);
 
-  // Get unique classes
   const classes = useMemo(() => {
     const uniqueClasses = [...new Set(students.map((s) => s.class))];
     return uniqueClasses.sort();
   }, [students]);
 
-  // Filter + Sort
   const filteredStudents = useMemo(() => {
     let result = [...students];
 
@@ -93,7 +91,6 @@ const StudentList = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-8 px-4">
       <div className="container mx-auto">
-        {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div>
             <h2 className="text-4xl font-bold text-gray-800">
@@ -113,7 +110,6 @@ const StudentList = () => {
           </button>
         </div>
 
-        {/* Filters */}
         <div className="bg-white rounded-2xl shadow-xl p-6 mb-8 border border-gray-100">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {/* Search */}
@@ -173,7 +169,6 @@ const StudentList = () => {
           </div>
         </div>
 
-        {/* Students */}
         {filteredStudents.length === 0 ? (
           <div className="bg-white p-12 text-center rounded-xl">
             <FaUserGraduate className="mx-auto text-gray-300 text-5xl mb-4" />

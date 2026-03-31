@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import Navbar from "./Components/Navbar";
+import Navbar from "./components/Navbar";
 import StudentList from "./components/StudentList";
 import StudentForm from "./components/StudentForm";
 import StudentDetails from "./components/StudentDetails";
@@ -16,12 +16,12 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadUser()); // Load user from localStorage on refresh
+    dispatch(loadUser()); 
   }, [dispatch]);
 
   return (
     <>
-      <Navbar /> {/* Navbar always visible */}
+      <Navbar /> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/students" element={<StudentList />} />

@@ -21,13 +21,11 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-600 text-white px-6 py-3 flex justify-between items-center">
-      {/* Logo */}
       <Link to="/students" className="flex items-center gap-2 font-bold">
         <FaGraduationCap />
         Student System
       </Link>
 
-      {/* Menu */}
       <div className="flex gap-6 items-center">
         <Link to="/students" className="flex items-center gap-2">
           <FaList />
