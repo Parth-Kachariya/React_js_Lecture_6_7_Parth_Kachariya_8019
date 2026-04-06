@@ -18,7 +18,7 @@ const Cloudnary = () => {
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "uploader"); // 👈 tumhara preset
+    formData.append("upload_preset", "uploader"); 
 
     try {
       const res = await fetch(
@@ -33,7 +33,7 @@ const Cloudnary = () => {
 
       console.log("Permanent URL:", data.secure_url);
 
-      setImageUrl(data.secure_url); // ✅ permanent URL set
+      setImageUrl(data.secure_url); 
     } catch (error) {
       console.error("Upload Error:", error);
     }
@@ -51,10 +51,8 @@ const Cloudnary = () => {
           type="file"
           onChange={handleFileChange}
         />
-
         <br />
         <br />
-
         {/* upload button */}
         <button
           className="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl cursor-pointer"
