@@ -45,7 +45,6 @@ const Cloudnary = () => {
           Image Upload (Permanent URL)
         </h2>
 
-        {/* file input */}
         <input
           className="px-6 py-4 my-3 bg-gray-800 text-white"
           type="file"
@@ -53,7 +52,6 @@ const Cloudnary = () => {
         />
         <br />
         <br />
-        {/* upload button */}
         <button
           className="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl cursor-pointer"
           onClick={handleUpload}
